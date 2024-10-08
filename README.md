@@ -23,15 +23,16 @@ Dashboard time age
 
 To understand the most important features, I am using four measures:
 - Feature importance: The XGBoost model can list the features that most contributed to the predictions.
-- Permutation importance: explain
-- SHAP values: explain
-- Correlation matrix: Thsi matrix showcases how correlated the feature is to the fraud. 
+- Permutation importance: This explores how important the feature is by measuring the perforfance of the model with the feture removed. The steeper drop in performance, the more important the feature is. 
+- SHAP values: SHAP measures feature importance differently by distributing the impact of each feature evenly on the final result. 
+- Correlation matrix: This matrix showcases how correlated the feature is to the fraud. 
 
-insert correlation matrix
-[Correlation with fraud](correlation with fraud.png)
+![Correlation with fraud](correlation%20with%20fraud.png) <br>
+
 Amount, merchant fraud percentage, zip code fraud percentage, and category are the most correlated with the is_fraud variable, while distance between user and merchant, weekday, and state are the least correlated.
 
 Insert feature importance and permutation importance plots. shap plot
+![Feature and permutation importance](permutation_feature_plot.png) <br>
 
 In general, amount, category, and hour have the most effect on predicting fraud. 
 Amount seems to have higher predicting power according to permutation importance, correlation matrix, and SHAP values. 
