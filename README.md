@@ -4,7 +4,12 @@
 Fraud is constantly on the rise alongside technology. This makes fraud detection important. The big obstacle is to understand how to detect fraud. This project aims to understand which features have better ability to predict fraud. This is done with a credit card fraud dataset that gets analysed with supervised machine learning using the XGBoost algorithm. 
 
 # Dataset
-The dataset is taken from Kaggle (https://www.kaggle.com/datasets/kartik2112/fraud-detection). It consists of 23 columns and X transactions. 
+The dataset is taken from Kaggle (https://www.kaggle.com/datasets/kartik2112/fraud-detection). It consists of 23 columns and 1 296 674 transactions. It has one binary column, is_fraud. With 0, the transaction is genuine and with 1, it is fraudulent. This will be the target variable. The dataset is higly imbalanced, as only 0.58 % of all transactions are fraudulent. This is important to consider during the rest of the analysis. 
+
+I created new features
+- Hour, month, and weekday are extracted from the timestamp.
+- Distance between merchant and user are calculated using their respective coordinates.
+- The percentage of fraudulent transaction for each merchant and zip code is created.
 
 # Insights from EDA with visualisations
 
