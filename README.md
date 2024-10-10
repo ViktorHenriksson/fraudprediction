@@ -38,6 +38,9 @@ In general, amount, category, and hour have the most effect on predicting fraud.
 Amount seems to have higher predicting power according to permutation importance, correlation matrix, and SHAP values. 
 Category is the most important feature according to the feature importance, with amount being a close second. Category and hour switches between being on the second and third places as important feature. The exception is the correlation analysis, where previous fraud in the form of percentage of fraud for merchants and zip codes were more important than hour. Age has medium importance in all measures. 
 
+![SHAP values](shap_beeswarm.png) <br>
+This beeswarm plot shows how each transaction contributed to the prediction of fraud. The values on the X-axis shows if the feature lowers or increases the likelihood of fraud. The colour shows if the features values are high or low. Higher values of amount and hour seem to increase likelihood of fraud. It seems that both lower and higher values decreases the likelihood for fraud. Category is a mixed bag, but it is a nominal variable and therefore the values themselves cannot say anything. Lower values of merchant fraud percentage lowers the likelihood of fraud, while higher zip fraud percentages increases the likelihood of fraud. These features do not seem to have any bigger effect on increasing respectively decreasing the likelihood. 
+
 Amount should be examined further. It was the feature with highest explaining power, but the relationship between amount and fraud seems quite fragmented. All fraudulent transactions in the dataset were in the 0-2000 USD group, with no high outliers, while the amounts for all transactions have more high outliers. Therefore, it is difficult to say if a certain amount predicts fraud and the feature should be examined for how it predicts fraud. 
 
 Age seems to be mildly important according to the correlation and feature importance, but low importance with SHAP. 
